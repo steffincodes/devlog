@@ -1,6 +1,6 @@
 ---
 title: Emoji Favicon
-description: to set favicon using Emoji
+description: "Make favicon using emoji"
 author: steffin
 date: 20200616
 ---
