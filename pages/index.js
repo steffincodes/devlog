@@ -170,7 +170,7 @@ export default function Home() {
       `}</style>
 
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,300;1,400&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,300;1,400&display=swap");
         :root {
           --bg-color: #eaeaea;
           --font-color: black;
@@ -182,7 +182,6 @@ export default function Home() {
           margin: 0;
           font-family: Raleway, Roboto, Helvetica Neue, sans-serif;
         }
-
         * {
           box-sizing: border-box;
         }
