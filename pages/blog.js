@@ -13,23 +13,28 @@ const Home = ({ slug }) => (
     </Head>
 
     <main>
-      <h1 className="title">Listing <a href="https://github.com/steffin-codes/devlog/tree/master/posts">.md</a> files</h1>
+      <h1 className="title">
+        Listing{" "}
+        <a href="https://github.com/steffin-codes/devlog/tree/master/posts">
+          .md
+        </a>{" "}
+        files
+      </h1>
 
       <p className="description">
-        A <strong>Next.js</strong> powered blog with headless CMS hosted on github pages written
-        using markdown :)
+        A <strong>Next.js</strong> powered blog with headless CMS hosted on
+        github pages written using markdown :)
       </p>
 
       <div className="grid">
         {slug.map((slug) => {
           return (
-            // <div key={slug}>
-            <Link href={"/blog/" + slug}>
+            <Link href={"/blog/" + slug} key={slug}>
               <a className="card">
                 <h3>{titleCase(slug.split("-").slice(1).join(" "))}</h3>
+                <p>📅 {convertToDate(slug.split("-")[0])}</p>
               </a>
             </Link>
-            // </div>
           );
         })}
       </div>
@@ -200,6 +205,29 @@ function titleCase(str) {
       return word.charAt(0).toUpperCase() + word.slice(1);
     })
     .join(" ");
+}
+
+function convertToDate(str) {
+  const MONTHS = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  var year = str.slice(0, 4);
+  var month = MONTHS[Number(str.slice(4, 6)) - 1];
+  var date = str.slice(6);
+  console.log(year, month, date, Number(str.slice(4, 6)));
+
+  return month + " " + date + ", " + year;
 }
 
 export default Home;
