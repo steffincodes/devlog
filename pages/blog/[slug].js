@@ -5,11 +5,10 @@ import matter from "gray-matter";
 import Head from "next/head";
 import marked from "marked";
 // import hljs from "highlight.js/lib/core";
-import hljs from 'highlight.js/lib/index';
+import hljs from "highlight.js/lib/index";
 // import 'highlight.js/styles/github.css';
 
 const Post = ({ htmlString, data }) => {
-  
   return (
     <div className="container">
       <Head>
@@ -19,9 +18,11 @@ const Post = ({ htmlString, data }) => {
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>"
         />
-        <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/a11y-dark.min.css"/>
-{/* <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script> */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/a11y-dark.min.css"
+        />
+        {/* <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script> */}
       </Head>
       <ul className="nav">
         <li>
@@ -57,14 +58,14 @@ const Post = ({ htmlString, data }) => {
           margin: 1em auto;
           width: 80vw;
         }
-        pre{
+        pre {
           font-family: consolas;
         }
-        pre>code{
+        pre > code {
           padding: 1em !important;
           border-radius: 1em !important;
         }
-        p>code{
+        p > code {
           background: #eee !important;
           padding: 0.2em;
           border-radius: 5px;
@@ -119,7 +120,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
 };
 
 export const syntaxHighlighting = () => {
+  let document;
   hljs.initHighlighting();
-}
+};
 
 export default Post;
