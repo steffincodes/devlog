@@ -120,8 +120,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
 };
 
 export const syntaxHighlighting = () => {
-  let document;
-  hljs.initHighlighting();
+  // let document;
+  // hljs.initHighlighting();
 };
 
 export default Post;
