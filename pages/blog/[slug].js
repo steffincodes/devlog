@@ -4,10 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import Head from "next/head";
 import marked from "marked";
-// import hljs from "highlight.js/lib/core";
-import hljs from "highlight.js/lib/index";
-// import 'highlight.js/styles/github.css';
-
+import CoverImage from "../../components/cover-image";
 const Post = ({ htmlString, data }) => {
   return (
     <div className="container">
@@ -35,8 +32,8 @@ const Post = ({ htmlString, data }) => {
           </a>
         </li>
       </ul>
+      <CoverImage title={data.title} />
       <div dangerouslySetInnerHTML={{ __html: htmlString }} />
-      <script>{syntaxHighlighting()}</script>
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,300;1,400&display=swap");
         :root {
@@ -119,12 +116,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
       data: parsedMarkdown.data,
     },
   };
-};
-
-export const syntaxHighlighting = () => {
-  let document;
-  hljs.initHighlighting();
-  // styling task list
 };
 
 export default Post;
