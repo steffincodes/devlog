@@ -2,25 +2,13 @@ import React from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Head from "next/head";
 import marked from "marked";
 import CoverImage from "../../components/cover-image";
 import Meta from "../../components/meta";
-const Post = ({ htmlString, data }) => {
+import Footer from "../../components/footer";
+const Post = ({ htmlString, data, fileCreatedDate, fileLastmodifiedDate }) => {
   return (
     <div className="container">
-      <Head>
-        <title>{data.title}</title>
-        <meta title="description" content={data.description} />
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/a11y-dark.min.css"
-        />
-      </Head>
       <Meta title={data.title} desc={data.excerpt} favicon={data.favicon} />
       <ul className="nav">
         <li>
@@ -36,6 +24,11 @@ const Post = ({ htmlString, data }) => {
       </ul>
       <CoverImage title={data.title} />
       <div dangerouslySetInnerHTML={{ __html: htmlString }} />
+      <Footer
+        fileCreatedDate={fileCreatedDate}
+        fileLastmodifiedDate={fileLastmodifiedDate}
+      />
+
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,300;1,400&display=swap");
         :root {
@@ -58,10 +51,9 @@ const Post = ({ htmlString, data }) => {
         }
         pre {
           font-family: consolas;
-        }
-        pre > code {
           padding: 1em !important;
-          border-radius: 1em !important;
+          background: #eee !important;
+          border-radius: 10px !important;
         }
         p > code {
           background: #eee !important;
@@ -85,9 +77,6 @@ const Post = ({ htmlString, data }) => {
         a {
           text-decoration: none;
         }
-        ul:has(> li > input) {
-          list-style-type: none;
-        }
         .msg {
           margin: 0 auto;
           padding: 1em;
@@ -106,21 +95,21 @@ const Post = ({ htmlString, data }) => {
           background-color: #bde5f8;
         }
         .info::before {
-          content: "🚨 ";
+          content: "😬 ";
         }
         .success {
           color: #4f8a10;
           background-color: #dff2bf;
         }
         .success::before {
-          content: "🚨 ";
+          content: "🥳 ";
         }
         .warning {
           color: #9f6000;
           background-color: #feefb3;
         }
         .warning::before {
-          content: "🚨 ";
+          content: "🤫 ";
         }
       `}</style>
     </div>
@@ -141,15 +130,18 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join("posts", slug + ".md"))
-    .toString();
+  const filePath = path.join("posts", slug + ".md");
+  const markdownWithMetadata = fs.readFileSync(filePath).toString();
+  const fileCreatedDate = fs.statSync(filePath).birthtime;
+  const fileLastmodifiedDate = fs.statSync(filePath).mtime;
   const parsedMarkdown = matter(markdownWithMetadata);
   const htmlString = marked(parsedMarkdown.content);
   return {
     props: {
       htmlString,
       data: parsedMarkdown.data,
+      fileCreatedDate: fileCreatedDate.toString(),
+      fileLastmodifiedDate: fileLastmodifiedDate.toString(),
     },
   };
 };
