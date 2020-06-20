@@ -1,16 +1,10 @@
 import Head from "next/head";
-
+import { BLOG_NAME, BLOG_DESC } from "../lib/constants";
+import Meta from "../components/meta";
 export default function Home() {
   return (
     <div className="container">
-      <Head>
-        <title>Devlog</title>
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>"
-        />
-      </Head>
-
+      <Meta title={BLOG_NAME} desc={BLOG_DESC} favicon='🍶' />
       <main>
         <h1 className="title">
           Welcome to <a href="/blog">Devlog!</a>
@@ -24,12 +18,12 @@ export default function Home() {
           pages written using markdown :)
         </p>
 
-        <div className="grid">
+        {/* <div className="grid">
           <a href="#" className="card">
             <h3>Category 1 &rarr;</h3>
             <p>Tiny description on why this needs its own category.</p>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <footer>Made with 🦄</footer>
