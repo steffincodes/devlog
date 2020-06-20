@@ -1,31 +1,33 @@
 ---
 title: Syntax Highlighting
-description: "Simple post to check syntax highlighting"
-tags: test-blog
+excerpt: "Simple post to check syntax highlighting"
+favicon: 🤕
+tags: test-post
 ---
-# Syntax Highlighting :)
 
 powered by [highlight.js](https://www.npmjs.com/package/highlight.js)
+
+<div class="msg error">Apparently highlight.js needs document and next.js does not have document? not sure what happenend there 😵</div>
 
 ## python2
 
 ```python
-print "Hello, World!" 
+print "Hello, World!"
 ```
 
 ## python3
 
 ```python
-print("Hello, World!") 
+print("Hello, World!")
 ```
 
 ## html
 
 ```html
 <html>
-    <body>
-        Hello, World!
-    </body>
+  <body>
+    Hello, World!
+  </body>
 </html>
 ```
 
@@ -45,32 +47,30 @@ cat("Hello world\n")
 
 ```php
 <?php
- echo 'Hello, World!';
+    echo 'Hello, World!';
 ?>
 ```
 
 ## css
 
 ```css
-body:before{
-    content:'Hello World';
+body:before {
+  content: "Hello World";
 }
 ```
 
 ## scss
 
 ```scss
-body:before{
-    content:'Hello World';
+body:before {
+  content: "Hello World";
 }
 ```
 
 ## javascript
 
 ```javascript
-<script language="JavaScript">
-    document.write('Hello, World!');
-</script>
+<script language="JavaScript">document.write('Hello, World!');</script>
 ```
 
 ## java
@@ -106,14 +106,14 @@ int main()
 }
 ```
 
-## c#
+## c
 
 ```c#
 using System;
 class HelloWorld
 {
    public static void Main()
-   { 
+   {
       System.Console.WriteLine("Hello, World!");
     }
 }

@@ -1,8 +1,8 @@
 ---
 title: Hello World
-description: "Simple Hello world markdown post"
+excerpt: "Simple Hello world markdown post"
+favicon: 👋
 tags: hello
 ---
-# Hello World :)
 
 This is a sample post. Will update later when I have time :)

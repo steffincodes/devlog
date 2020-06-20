@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import Head from "next/head";
 import marked from "marked";
 import CoverImage from "../../components/cover-image";
+import Meta from "../../components/meta";
 const Post = ({ htmlString, data }) => {
   return (
     <div className="container">
@@ -20,6 +21,7 @@ const Post = ({ htmlString, data }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/a11y-dark.min.css"
         />
       </Head>
+      <Meta title={data.title} desc={data.excerpt} favicon={data.favicon} />
       <ul className="nav">
         <li>
           <a alt="home" href="/">
@@ -85,6 +87,40 @@ const Post = ({ htmlString, data }) => {
         }
         ul:has(> li > input) {
           list-style-type: none;
+        }
+        .msg {
+          margin: 0 auto;
+          padding: 1em;
+          vertical-align: middle;
+          border-radius: 5px;
+        }
+        .error {
+          color: #d8000c;
+          background-color: #ffd2d2;
+        }
+        .error::before {
+          content: "🚨 ";
+        }
+        .info {
+          color: #00529b;
+          background-color: #bde5f8;
+        }
+        .info::before {
+          content: "🚨 ";
+        }
+        .success {
+          color: #4f8a10;
+          background-color: #dff2bf;
+        }
+        .success::before {
+          content: "🚨 ";
+        }
+        .warning {
+          color: #9f6000;
+          background-color: #feefb3;
+        }
+        .warning::before {
+          content: "🚨 ";
         }
       `}</style>
     </div>

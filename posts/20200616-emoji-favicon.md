@@ -1,10 +1,13 @@
 ---
 title: Emoji Favicon
-description: "Make favicon using emoji"
-tags: code-snippet
+excerpt: "Small html snippet to make favicons using emoji :)"
+favicon: 🥳
+tags: snippet
 ---
 
-# Emoji Favicon
+Thought this would be a nice way to have fun with the blogs metadata 🤪 Check the evechanging emoji favicon on my blog posts :) More on how to implement this in Next.js later
+
+For now ...
 
 Add this to your `head`
 
