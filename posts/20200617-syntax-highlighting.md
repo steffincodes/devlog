@@ -1,6 +1,7 @@
 ---
 title: Syntax Highlighting
 description: "Simple post to check syntax highlighting"
+tags: test-blog
 ---
 # Syntax Highlighting :)
 

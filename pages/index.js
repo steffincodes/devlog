@@ -17,25 +17,16 @@ export default function Home() {
         </h1>
 
         <p className="description">
-          A <strong>Next.js</strong> powered blog hosted on github pages written
-          using markdown :)
+          A <strong>Next.js</strong> powered blog hosted on
+          <a href="https://github.com/steffin-codes/devlog"> github </a>
+          deployed on
+          <a href="https://steffin-devlog.netlify.app/"> netifly </a>
+          pages written using markdown :)
         </p>
 
         <div className="grid">
           <a href="#" className="card">
             <h3>Category 1 &rarr;</h3>
-            <p>Tiny description on why this needs its own category.</p>
-          </a>
-          <a href="#" className="card">
-            <h3>Category 2 &rarr;</h3>
-            <p>Tiny description on why this needs its own category.</p>
-          </a>
-          <a href="#" className="card">
-            <h3>Category 3 &rarr;</h3>
-            <p>Tiny description on why this needs its own category.</p>
-          </a>
-          <a href="#" className="card">
-            <h3>Category 4 &rarr;</h3>
             <p>Tiny description on why this needs its own category.</p>
           </a>
         </div>
@@ -81,14 +72,18 @@ export default function Home() {
           text-decoration: none;
         }
 
-        .title a {
+        .title a,
+        p a {
           color: var(--accent-color);
           text-decoration: none;
         }
 
         .title a:hover,
         .title a:focus,
-        .title a:active {
+        .title a:active,
+        p a:hover,
+        p a:focus,
+        p a:active {
           text-decoration: underline;
         }
 

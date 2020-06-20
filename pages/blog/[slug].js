@@ -22,7 +22,6 @@ const Post = ({ htmlString, data }) => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/a11y-dark.min.css"
         />
-        {/* <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script> */}
       </Head>
       <ul className="nav">
         <li>
@@ -87,6 +86,9 @@ const Post = ({ htmlString, data }) => {
         a {
           text-decoration: none;
         }
+        ul:has(> li > input) {
+          list-style-type: none;
+        }
       `}</style>
     </div>
   );
@@ -122,6 +124,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
 export const syntaxHighlighting = () => {
   let document;
   hljs.initHighlighting();
+  // styling task list
 };
 
 export default Post;

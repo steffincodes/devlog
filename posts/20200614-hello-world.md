@@ -1,6 +1,7 @@
 ---
 title: Hello World
 description: "Simple Hello world markdown post"
+tags: hello
 ---
 # Hello World :)
 

@@ -225,8 +225,6 @@ function convertToDate(str) {
   var year = str.slice(0, 4);
   var month = MONTHS[Number(str.slice(4, 6)) - 1];
   var date = str.slice(6,8);
-  console.log(year, month, date, Number(str.slice(4, 6)));
-
   return month + " " + date + ", " + year;
 }
 

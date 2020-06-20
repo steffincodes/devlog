@@ -1,8 +1,7 @@
 ---
 title: Emoji Favicon
 description: "Make favicon using emoji"
-author: steffin
-date: 20200616
+tags: code-snippet
 ---
 
 # Emoji Favicon
