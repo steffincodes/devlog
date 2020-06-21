@@ -14,7 +14,7 @@ export default function Home() {
           A <strong>Next.js</strong> powered blog hosted on
           <a href="https://github.com/steffin-codes/devlog"> github </a>
           deployed on
-          <a href="https://steffin-devlog.netlify.app/"> netifly </a>
+          <a href="https://devlog-one.vercel.app/"> vercel </a>
           pages written using markdown :)
         </p>
 

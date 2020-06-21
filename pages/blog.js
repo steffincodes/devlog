@@ -1,17 +1,10 @@
 import Link from "next/link";
 import fs from "fs";
-import Head from "next/head";
-
+import { BLOG_NAME, BLOG_DESC } from "../lib/constants";
+import Meta from "../components/Meta";
 const Home = ({ slug }) => (
   <div className="container">
-    <Head>
-      <title>Blog List</title>
-      <link
-        rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>"
-      />
-    </Head>
-
+    <Meta title={BLOG_NAME} desc={BLOG_DESC} favicon="✊🏿" />
     <main>
       <h1 className="title">
         Listing{" "}
@@ -20,12 +13,10 @@ const Home = ({ slug }) => (
         </a>{" "}
         files
       </h1>
-
       <p className="description">
         A <strong>Next.js</strong> powered blog with headless CMS hosted on
         github pages written using markdown :)
       </p>
-
       <div className="grid">
         {slug.map((slug) => {
           return (
@@ -39,9 +30,7 @@ const Home = ({ slug }) => (
         })}
       </div>
     </main>
-
     <footer>Made with 🦄</footer>
-
     <style jsx>{`
       .container {
         min-height: 100vh;
@@ -51,12 +40,10 @@ const Home = ({ slug }) => (
         justify-content: center;
         align-items: center;
       }
-
       ::selection {
         background: var(--accent-color);
         color: var(--bg-color);
       }
-
       main {
         padding: 5rem 0;
         flex: 1;
@@ -65,7 +52,6 @@ const Home = ({ slug }) => (
         justify-content: center;
         align-items: center;
       }
-
       footer {
         width: 100%;
         height: 100px;
@@ -74,39 +60,32 @@ const Home = ({ slug }) => (
         justify-content: center;
         align-items: center;
       }
-
       a {
         color: inherit;
         text-decoration: none;
       }
-
       .title a {
         color: var(--accent-color);
         text-decoration: none;
       }
-
       .title a:hover,
       .title a:focus,
       .title a:active {
         text-decoration: underline;
       }
-
       .title {
         margin: 0;
         line-height: 1.15;
         font-size: 4rem;
       }
-
       .title,
       .description {
         text-align: center;
       }
-
       .description {
         line-height: 1.5;
         font-size: 1.5rem;
       }
-
       code {
         background: #fafafa;
         border-radius: 5px;
@@ -115,17 +94,14 @@ const Home = ({ slug }) => (
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
           DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
       }
-
       .grid {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-
         max-width: 800px;
         margin-top: 3rem;
       }
-
       .card {
         margin: 1rem;
         flex-basis: 45%;
@@ -137,29 +113,24 @@ const Home = ({ slug }) => (
         border-radius: 10px;
         transition: color 0.15s ease, border-color 0.15s ease;
       }
-
       .card:hover,
       .card:focus,
       .card:active {
         color: var(--accent-color);
         border-color: var(--accent-color);
       }
-
       .card h3 {
         margin: 0 0 1rem 0;
         font-size: 1.5rem;
       }
-
       .card p {
         margin: 0;
         font-size: 1.25rem;
         line-height: 1.5;
       }
-
       .logo {
         height: 1em;
       }
-
       @media (max-width: 600px) {
         .grid {
           width: 100%;
@@ -167,7 +138,6 @@ const Home = ({ slug }) => (
         }
       }
     `}</style>
-
     <style jsx global>{`
       @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,300;1,400&display=swap");
       :root {
@@ -187,7 +157,6 @@ const Home = ({ slug }) => (
     `}</style>
   </div>
 );
-
 export const getStaticProps = async () => {
   const files = fs.readdirSync("posts");
   return {
@@ -196,17 +165,15 @@ export const getStaticProps = async () => {
     },
   };
 };
-
 function titleCase(str) {
   return str
-    .toLowerCase()
+    // .toLowerCase()
     .split(" ")
     .map(function (word) {
       return word.charAt(0).toUpperCase() + word.slice(1);
     })
     .join(" ");
 }
-
 function convertToDate(str) {
   const MONTHS = [
     "Jan",
@@ -224,8 +191,7 @@ function convertToDate(str) {
   ];
   var year = str.slice(0, 4);
   var month = MONTHS[Number(str.slice(4, 6)) - 1];
-  var date = str.slice(6,8);
+  var date = str.slice(6, 8);
   return month + " " + date + ", " + year;
 }
-
 export default Home;
