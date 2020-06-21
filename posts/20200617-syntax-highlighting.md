@@ -7,7 +7,10 @@ tags: test-post
 
 powered by [highlight.js](https://www.npmjs.com/package/highlight.js)
 
-<div class="msg error">Apparently highlight.js needs document and next.js does not have document? not sure what happenend there 😵</div>
+<div class="msg error">Apparently highlight.js needs document and next.js does not have document? not sure what happenend there 😵 as on date 20,2020 16:01</div>
+<br>
+<div class="msg success">Its working 🎉 Updated with the following <a href="https://gist.github.com/steffin-codes/603b9051295def5c7394273dd3fdc4b9">gist</a> </div>
+<hr>
 
 ## python2
 
@@ -97,7 +100,7 @@ int main(void) {
 
 ## c++
 
-```c++
+```cpp
 #include <iostream>
 
 int main()
@@ -108,7 +111,7 @@ int main()
 
 ## c
 
-```c#
+```csharp
 using System;
 class HelloWorld
 {

@@ -1,4 +1,4 @@
-import DateFormater from "./date-formater";
+import DateFormater from "./DateFormater";
 import { AUTHOR } from "../lib/constants";
 export default function Footer({ fileCreatedDate, fileLastmodifiedDate }) {
   return (

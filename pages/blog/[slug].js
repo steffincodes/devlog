@@ -2,10 +2,10 @@ import React from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import marked from "marked";
-import CoverImage from "../../components/cover-image";
-import Meta from "../../components/meta";
-import Footer from "../../components/footer";
+import Markdown from "../../components/Markdown";
+import CoverImage from "../../components/CoverImage";
+import Meta from "../../components/Meta";
+import Footer from "../../components/Footer";
 const Post = ({ htmlString, data, fileCreatedDate, fileLastmodifiedDate }) => {
   return (
     <div className="container">
@@ -23,7 +23,8 @@ const Post = ({ htmlString, data, fileCreatedDate, fileLastmodifiedDate }) => {
         </li>
       </ul>
       <CoverImage title={data.title} />
-      <div dangerouslySetInnerHTML={{ __html: htmlString }} />
+      {/* <div dangerouslySetInnerHTML={{ __html: htmlString }} /> */}
+      <Markdown postBody={htmlString} />
       <Footer
         fileCreatedDate={fileCreatedDate}
         fileLastmodifiedDate={fileLastmodifiedDate}
@@ -50,10 +51,10 @@ const Post = ({ htmlString, data, fileCreatedDate, fileLastmodifiedDate }) => {
           width: 80vw;
         }
         pre {
-          font-family: consolas;
-          padding: 1em !important;
-          background: #eee !important;
-          border-radius: 10px !important;
+          // font-family: consolas;
+          // padding: 1em !important;
+          // background: #eee !important;
+          // border-radius: 10px !important;
         }
         p > code {
           background: #eee !important;
@@ -135,10 +136,9 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const fileCreatedDate = fs.statSync(filePath).birthtime;
   const fileLastmodifiedDate = fs.statSync(filePath).mtime;
   const parsedMarkdown = matter(markdownWithMetadata);
-  const htmlString = marked(parsedMarkdown.content);
   return {
     props: {
-      htmlString,
+      htmlString: parsedMarkdown.content,
       data: parsedMarkdown.data,
       fileCreatedDate: fileCreatedDate.toString(),
       fileLastmodifiedDate: fileLastmodifiedDate.toString(),

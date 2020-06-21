@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,300;1,400&display=swap");
+:root {
+  --bg-color: #eaeaea;
+  --font-color: black;
+  --accent-color: #7a490b;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Raleway, Roboto, Helvetica Neue, sans-serif;
+}
+body {
+  margin: 1em auto;
+  width: 80vw;
+}
+pre {
+  font-family: consolas;
+  padding: 1em !important;
+  background: #eee !important;
+  border-radius: 10px !important;
+}
+p > code {
+  background: #eee !important;
+  padding: 0.2em;
+  border-radius: 5px;
+  font-family: consolas, monospace;
+}
+code::-webkit-scrollbar {
+  display: none !important;
+}
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav li {
+  padding-right: 1em;
+}
+a {
+  text-decoration: none;
+}
+.msg {
+  margin: 0 auto;
+  padding: 1em;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+.error {
+  color: #d8000c;
+  background-color: #ffd2d2;
+}
+.error::before {
+  content: "🚨 ";
+}
+.info {
+  color: #00529b;
+  background-color: #bde5f8;
+}
+.info::before {
+  content: "😬 ";
+}
+.success {
+  color: #4f8a10;
+  background-color: #dff2bf;
+}
+.success::before {
+  content: "🥳 ";
+}
+.warning {
+  color: #9f6000;
+  background-color: #feefb3;
+}
+.warning::before {
+  content: "🤫 ";
+}

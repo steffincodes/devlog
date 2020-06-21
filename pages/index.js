@@ -1,13 +1,13 @@
 import Head from "next/head";
 import { BLOG_NAME, BLOG_DESC } from "../lib/constants";
-import Meta from "../components/meta";
+import Meta from "../components/Meta";
 export default function Home() {
   return (
     <div className="container">
       <Meta title={BLOG_NAME} desc={BLOG_DESC} favicon='🍶' />
       <main>
         <h1 className="title">
-          Welcome to <a href="/blog">Devlog!</a>
+          Welcome to <a href="/blog">{BLOG_NAME}!</a>
         </h1>
 
         <p className="description">
