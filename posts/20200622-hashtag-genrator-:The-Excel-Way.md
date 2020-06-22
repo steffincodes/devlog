@@ -34,7 +34,7 @@ So there you have it.
 - One line of excel command to generate the list of 30 hashtags seperated by space :)
 
 ```
-= 
+= not gonna show cause its not one line or one cell... might change this to vba or link tot hte excel sheet -.-
 ```
 
 ## reference
