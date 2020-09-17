@@ -1,5 +1,5 @@
 ---
-title: Deno: First App
+title: Deno - First App
 excerpt: "A simple app to check out deno"
 favicon: 🦕
 tags: deno
